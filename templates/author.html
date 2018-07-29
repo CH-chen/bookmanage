@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1px">
+
+    <tr>
+        <th>#</th>
+        <th>作者</th>
+        <th>书籍</th>
+        <th>编辑</th>
+
+    </th>
+
+
+        {% for author in author_obj %}
+    <tr>
+
+        <td>{{author.id}}</td>
+        <td>{{author.aname}}</td>
+
+        <td>
+            {% for book in author.book.all %}
+                {% if forloop.last %}
+                    {{book.bookName}}
+                {% else %}
+                    {{book.bookName}}|
+                {% endif %}
+            {% endfor %}
+
+        </td>
+            <td><a href="/editor_author/?id={{author.id}}">编辑</a></td>
+
+    </tr>
+        {% endfor %}
+
+</table>
+
+<p>author_obj.book.all.0.bookName</p> 错误，无法输出
+
+</body>
+</html>

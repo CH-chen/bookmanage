@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑书籍-选取出版社</title>
+</head>
+<body>
+<form action="/editor_book/" method="post">
+    <input type="text" name="book_id" value="{{edi_book.id}}" style="display:none">
+
+    <input type="text" name="book_name" value="{{edi_book.bookName}}">
+
+    <select name="publsh" >
+
+        {% for publ in publ %}
+            {% if edi_book.publisher_id == publ.id %}
+            <option selected value="{{publ.id}}">{{publ.name}}</option>
+            {% else %}
+            <option value="{{publ.id}}">{{publ.name}}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

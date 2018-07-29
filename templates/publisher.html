@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出版社</title>
+</head>
+<body>
+
+<a href="/add_pub/">添加数据</a>
+
+<p>{% for publ in publ %}
+    {{publ.id}}
+    {{publ.name}}
+    <a href="/del/?id={{publ.id}}">删除</a>
+    <a href="/del2/{{publ.id}}">删除22</a>
+    <a href="/editor_pub/?id={{publ.id}}">编辑</a>
+    <br>
+    {% endfor %}
+
+
+</p>
+
+</body>
+</html>

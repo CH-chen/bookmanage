@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1px">
+
+    <thead>
+    <tr>
+
+        <th>id</th>
+        <th>title</th>
+        <th>publicher</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in all_book %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.bookName}}</td>
+        <td>{{i.publisher.name}}</td>
+        <td><a href="/editor_book/?id={{i.id}}">编辑</a></td>
+        <td><a href="/editor_book/{{i.id}}">编辑2</a></td>
+
+
+
+
+
+    </tr>
+    {% endfor%}
+
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
